@@ -1,0 +1,28 @@
+name: flutter_flavor_dotenv_example
+description: "Example app demonstrating flutter_flavor_dotenv with Dev/Staging/Prod flavors."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.11.5
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_flavor_dotenv:
+    path: ../
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+
+  # Bundle all three .env files as assets.
+  # Each flavor entry point loads only the relevant file at runtime.
+  assets:
+    - assets/.env.dev
+    - assets/.env.staging
+    - assets/.env.prod
