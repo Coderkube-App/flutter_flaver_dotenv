@@ -23,10 +23,10 @@ extension AppEnvExtension on AppEnv {
 
   /// Returns a human-readable label for the environment.
   String get label => switch (this) {
-        AppEnv.dev => 'Development',
-        AppEnv.staging => 'Staging',
-        AppEnv.prod => 'Production',
-      };
+    AppEnv.dev => 'Development',
+    AppEnv.staging => 'Staging',
+    AppEnv.prod => 'Production',
+  };
 
   /// Returns the asset path for the corresponding `.env` file.
   ///
@@ -37,8 +37,8 @@ extension AppEnvExtension on AppEnv {
   /// assets/.env.prod
   /// ```
   String get assetPath => switch (this) {
-        AppEnv.dev => 'assets/.env.dev',
-        AppEnv.staging => 'assets/.env.staging',
-        AppEnv.prod => 'assets/.env.prod',
-      };
+    AppEnv.dev => 'assets/.env.dev',
+    AppEnv.staging => 'assets/.env.staging',
+    AppEnv.prod => 'assets/.env.prod',
+  };
 }

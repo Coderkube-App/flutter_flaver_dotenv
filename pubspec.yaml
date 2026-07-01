@@ -1,9 +1,9 @@
 name: flutter_flavor_dotenv
 description: "A type-safe, multi-flavor Flutter environment manager. Supports Dev/Staging/Prod flavors with .env file parsing and build-time validation."
-version: 0.0.1
-homepage: https://github.com/nileshsenta/flutter_flavor_dotenv
-repository: https://github.com/nileshsenta/flutter_flavor_dotenv
-issue_tracker: https://github.com/nileshsenta/flutter_flavor_dotenv/issues
+version: 0.0.2
+homepage: https://github.com/Coderkube-App/flutter_flaver_dotenv
+repository: https://github.com/Coderkube-App/flutter_flaver_dotenv
+issue_tracker: https://github.com/Coderkube-App/flutter_flaver_dotenv/issues
 
 environment:
   sdk: ^3.11.5
