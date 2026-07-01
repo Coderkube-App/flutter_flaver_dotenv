@@ -28,10 +28,10 @@ class FlavorDemoApp extends StatelessWidget {
   }
 
   static Color _envColor(AppEnv env) => switch (env) {
-        AppEnv.dev => const Color(0xFF2563EB),
-        AppEnv.staging => const Color(0xFFEA580C),
-        AppEnv.prod => const Color(0xFF16A34A),
-      };
+    AppEnv.dev => const Color(0xFF2563EB),
+    AppEnv.staging => const Color(0xFFEA580C),
+    AppEnv.prod => const Color(0xFF16A34A),
+  };
 }
 
 class FlavorDemoHomePage extends StatelessWidget {
@@ -55,7 +55,8 @@ class FlavorDemoHomePage extends StatelessWidget {
           const SizedBox(height: 20),
           _ConfigSection(
             title: 'Must have',
-            subtitle: 'Every .env file needs these — the app won\'t start without them',
+            subtitle:
+                'Every .env file needs these — the app won\'t start without them',
             children: [
               _ConfigTile(label: 'API URL', value: config.apiUrl),
               _ConfigTile(label: 'App name', value: config.appName),
@@ -71,10 +72,7 @@ class FlavorDemoHomePage extends StatelessWidget {
             title: 'Nice to have',
             subtitle: 'Common extras — safe to omit; returns null if missing',
             children: [
-              _ConfigTile(
-                label: 'Base URL',
-                value: config.baseUrl ?? '—',
-              ),
+              _ConfigTile(label: 'Base URL', value: config.baseUrl ?? '—'),
               _ConfigTile(
                 label: 'Sentry DSN',
                 value: _maskSecret(config.sentryDsn),
@@ -169,19 +167,13 @@ class FlavorDemoHomePage extends StatelessWidget {
         : 'Logging is disabled for ${config.env.label}.';
 
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text(message),
-        behavior: SnackBarBehavior.floating,
-      ),
+      SnackBar(content: Text(message), behavior: SnackBarBehavior.floating),
     );
   }
 }
 
 class _HeroHeader extends StatelessWidget {
-  const _HeroHeader({
-    required this.env,
-    required this.assetPath,
-  });
+  const _HeroHeader({required this.env, required this.assetPath});
 
   final AppEnv env;
   final String assetPath;
@@ -318,7 +310,7 @@ class _ConfigTile extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding:  EdgeInsets.only(right: 8.0),
+            padding: EdgeInsets.only(right: 8.0),
             child: SizedBox(
               width: 112,
               child: Text(
@@ -346,10 +338,7 @@ class _ConfigTile extends StatelessWidget {
 }
 
 class _CopyableChip extends StatelessWidget {
-  const _CopyableChip({
-    required this.label,
-    required this.value,
-  });
+  const _CopyableChip({required this.label, required this.value});
 
   final String label;
   final String value;
@@ -461,10 +450,7 @@ class _CommandLine extends StatelessWidget {
   Widget build(BuildContext context) {
     return SelectableText(
       command,
-      style: const TextStyle(
-        fontFamily: 'monospace',
-        fontSize: 12.5,
-      ),
+      style: const TextStyle(fontFamily: 'monospace', fontSize: 12.5),
     );
   }
 }

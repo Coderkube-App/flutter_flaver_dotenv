@@ -151,7 +151,10 @@ ENABLE_LOGGING=true
       }
 
       expect(caught, isNotNull);
-      expect(caught!.missingKeys, containsAll(['API_URL', 'APP_NAME', 'ENABLE_LOGGING']));
+      expect(
+        caught!.missingKeys,
+        containsAll(['API_URL', 'APP_NAME', 'ENABLE_LOGGING']),
+      );
       expect(caught.envName, equals('prod'));
     });
 
@@ -241,12 +244,15 @@ ENABLE_LOGGING=true
       expect(AppConfig.instance['NONEXISTENT'], isNull);
     });
 
-    test('throws EnvNotInitializedException when instance accessed before init', () {
-      expect(
-        () => AppConfig.instance,
-        throwsA(isA<EnvNotInitializedException>()),
-      );
-    });
+    test(
+      'throws EnvNotInitializedException when instance accessed before init',
+      () {
+        expect(
+          () => AppConfig.instance,
+          throwsA(isA<EnvNotInitializedException>()),
+        );
+      },
+    );
 
     test('isInitialized is false before initialize', () {
       expect(AppConfig.isInitialized, isFalse);
@@ -262,12 +268,17 @@ ENABLE_LOGGING=true
       expect(AppConfig.isInitialized, isTrue);
     });
 
-    test('initializeFromMap throws EnvValidationException when required keys missing', () {
-      expect(
-        () => AppConfig.initializeFromMap(AppEnv.dev, {'API_URL': 'https://api.dev.example.com'}),
-        throwsA(isA<EnvValidationException>()),
-      );
-    });
+    test(
+      'initializeFromMap throws EnvValidationException when required keys missing',
+      () {
+        expect(
+          () => AppConfig.initializeFromMap(AppEnv.dev, {
+            'API_URL': 'https://api.dev.example.com',
+          }),
+          throwsA(isA<EnvValidationException>()),
+        );
+      },
+    );
 
     test('resetForTesting clears instance', () {
       AppConfig.initializeFromMap(AppEnv.dev, {

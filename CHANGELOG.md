@@ -1,3 +1,7 @@
+## 0.0.2
+
+* Updated repository links to `Coderkube-App/flutter_flaver_dotenv`.
+
 ## 0.0.1
 
 * Initial release.

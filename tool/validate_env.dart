@@ -18,11 +18,7 @@ import 'dart:io';
 // ---------------------------------------------------------------------------
 
 /// Keys that must be present and non-empty in every .env file.
-const List<String> requiredKeys = [
-  'API_URL',
-  'APP_NAME',
-  'ENABLE_LOGGING',
-];
+const List<String> requiredKeys = ['API_URL', 'APP_NAME', 'ENABLE_LOGGING'];
 
 /// Map of environment name → relative path to its .env file.
 const Map<String, String> envFiles = {

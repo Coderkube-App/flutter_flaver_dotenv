@@ -37,7 +37,7 @@ class AppConfig {
   final Map<String, String> _values;
 
   AppConfig._({required this.env, required Map<String, String> values})
-      : _values = Map.unmodifiable(values);
+    : _values = Map.unmodifiable(values);
 
   // ---------------------------------------------------------------------------
   // Singleton management
@@ -129,8 +129,7 @@ class AppConfig {
   /// Whether logging is enabled (maps to the `ENABLE_LOGGING` key).
   ///
   /// Returns `true` if the value is `"true"` (case-insensitive).
-  bool get enableLogging =>
-      _values['ENABLE_LOGGING']?.toLowerCase() == 'true';
+  bool get enableLogging => _values['ENABLE_LOGGING']?.toLowerCase() == 'true';
 
   /// Optional: a secondary base URL (maps to the `BASE_URL` key if defined).
   String? get baseUrl => _values['BASE_URL'];
